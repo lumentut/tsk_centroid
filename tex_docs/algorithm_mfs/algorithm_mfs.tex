@@ -1,0 +1,44 @@
+\documentclass[12pt]{report}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{algorithm}[H]
+\caption{Cluster-Based Membership Function (MF) Generation}
+\label{alg:mf_generation}
+\begin{algorithmic}[1]
+\Require Dataset $D = \{ X_1, X_2, \ldots, X_d, Y \}$, number of clusters $k$, clustering method (e.g., FCM, K-Means, MiniBatch K-Means)
+\Ensure Centroids and Membership Functions (MFs) for each feature and target variable
+
+\State Initialize the clustering method and number of clusters $k$
+
+\For{each feature $X_i$ in dataset $D$}
+    \State Extract the column vector of $X_i$
+    \State Perform clustering on $X_i$ using the selected method
+    \State Obtain centroids of the resulting clusters: $C_i = \{ c_{i1}, c_{i2}, \ldots, c_{ik} \}$
+    \For{each centroid $c_{ij}$ in $C_i$}
+        \State Define Membership Function $MF_{ij}$ based on clustering results
+        \State (\textit{e.g., Gaussian, Triangular, or Trapezoidal shape})
+    \EndFor
+    \State Store $C_i$ and corresponding $MF_{ij}$
+\EndFor
+
+\Statex
+
+\Comment{Repeat the same process for the target variable $Y$}
+\State Perform clustering on $Y$
+\State Obtain centroids: $C_Y = \{ c_{Y1}, c_{Y2}, \ldots, c_{Yk} \}$
+\For{each centroid $c_{Yj}$ in $C_Y$}
+    \State Define Membership Function $MF_{Yj}$ based on clustering results
+\EndFor
+
+\Statex
+
+\State \textbf{Output:} Centroids and MFs for all features $X_1, X_2, \ldots, X_d$ and target $Y$
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}

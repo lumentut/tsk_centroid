@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup env PYTHONPATH=. python3 scripts/tsk_selection.py > logs/tsk_selection.log 2>&1 &

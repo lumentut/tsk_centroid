@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup env PYTHONPATH=. python3 scripts/clustering_performance.py > logs/clustering_performance.log 2>&1 &

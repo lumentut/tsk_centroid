@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup env PYTHONPATH=. python3 scripts/feature_selection_iqr_outliers.py > logs/feature_selection_iqr_outliers.log 2>&1 &

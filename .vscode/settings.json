@@ -1,0 +1,10 @@
+{
+  "python.testing.unittestArgs": ["-v", "-s", "./test", "-p", "test_*.py"],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  }
+}

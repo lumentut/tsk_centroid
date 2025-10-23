@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup env PYTHONPATH=. python3 scripts/it2tsk_gaussian_exploration.py > logs/it2tsk_gaussian_exploration.log 2>&1 &

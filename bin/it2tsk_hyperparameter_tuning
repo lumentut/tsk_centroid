@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup env PYTHONPATH=. python3 scripts/it2tsk_hyperparameter_tuning.py > logs/it2tsk_hyperparameter_tuning.log 2>&1 &

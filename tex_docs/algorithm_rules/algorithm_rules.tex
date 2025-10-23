@@ -1,0 +1,81 @@
+\documentclass[12pt]{report}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}   % for equations, align, and math symbols
+\usepackage{amssymb}   % for \mathbb (e.g., \mathbb{R})
+
+\begin{document}
+
+\begin{algorithm}[H]
+\caption{Cluster-Based Membership Function (MF) Generation}
+\label{alg:mf_generation}
+\begin{algorithmic}[1]
+\Require Dataset $D = \{ X_1, X_2, \ldots, X_d, Y \}$, number of clusters $k$, clustering method (e.g., FCM, K-Means, MiniBatch K-Means)
+\Ensure Centroids and Membership Functions (MFs) for each feature and target variable
+
+\State Initialize the clustering method and number of clusters $k$
+
+\For{each feature $X_i$ in dataset $D$}
+    \State Extract the column vector of $X_i$
+    \State Perform clustering on $X_i$ using the selected method
+    \State Obtain centroids of the resulting clusters: $C_i = \{ c_{i1}, c_{i2}, \ldots, c_{ik} \}$
+    \For{each centroid $c_{ij}$ in $C_i$}
+        \State Define Membership Function $MF_{ij}$ based on clustering results
+        \State (\textit{e.g., Gaussian, Triangular, or Trapezoidal shape})
+    \EndFor
+    \State Store $C_i$ and corresponding $MF_{ij}$
+\EndFor
+
+\Statex
+
+\Comment{Repeat the same process for the target variable $Y$}
+\State Perform clustering on $Y$
+\State Obtain centroids: $C_Y = \{ c_{Y1}, c_{Y2}, \ldots, c_{Yk} \}$
+\For{each centroid $c_{Yj}$ in $C_Y$}
+    \State Define Membership Function $MF_{Yj}$ based on clustering results
+\EndFor
+
+\Statex
+
+\State \textbf{Output:} Centroids and MFs for all features $X_1, X_2, \ldots, X_d$ and target $Y$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Rule Base Generation from Global Clustering}
+\label{alg:rule_generation}
+\begin{algorithmic}[1]
+\Require Dataset $D = \{ X_1, X_2, \ldots, X_d, Y \}$, number of clusters $R$, clustering method (e.g., FCM, K-Means, MiniBatch K-Means)
+\Ensure Fuzzy rule base $\{ R_1, R_2, \ldots, R_R \}$ consisting of antecedents and consequents
+
+\State Combine all features and target into a single dataset $D' = [X_1, X_2, \ldots, X_d, Y]$
+
+\State Perform clustering on $D'$ using the selected clustering method
+\State Obtain $R$ clusters:
+\[
+\mathcal{C} = \{ C_1, C_2, \ldots, C_R \}, \quad R \in [2,14]
+\]
+
+\For{each cluster $C_r$ in $\mathcal{C}$}
+    \State Extract centroid values:
+    \[
+    C_r = \{ x'_1, x'_2, \ldots, x'_d, y'_r \}
+    \]
+    \State Define fuzzy linguistic terms ($LT$) associated with each feature and target dimension
+    \State Construct fuzzy rule $R_r$ according to Zadeh’s or TSK rule format:
+    \[
+    R_r: \text{IF } x'_1 \text{ is } LT_{1r} \text{ AND } x'_2 \text{ is } LT_{2r} \text{ AND } \ldots \text{ AND } x'_d \text{ is } LT_{dr} \text{ THEN } y' \text{ is } LT_{yr}
+    \]
+    \[
+    R_r : \text{IF } x'_1 \text{ is } LT_{1r} \text{ AND } x'_2 \text{ is } LT_{2r} \ldots \text{ AND } x'_d \text{ is } LT_{dr}
+    \text{ THEN } y' = \beta_{0r} + \sum_{i=1}^{d} \beta_{ir} x'_i
+    \]
+\EndFor
+
+\Statex
+\State \textbf{Output:} Fuzzy rule base $\mathcal{R} = \{ R_1, R_2, \ldots, R_R \}$
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}

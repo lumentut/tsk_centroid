@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup env PYTHONPATH=. python3 scripts/parameter_tuning_10x.py > logs/parameter_tuning_10x.log 2>&1 &
