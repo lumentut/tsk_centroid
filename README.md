@@ -112,6 +112,45 @@ This project contains multiple Jupyter notebook experiments for IT2TSK fuzzy inf
 
 **👉 See [EXPERIMENT_GUIDE.md](EXPERIMENT_GUIDE.md) for complete experiment instructions.**
 
+## Using on [Code Ocean](https://codeocean.com/)
+
+This project is designed to be compatible with [Code Ocean](https://codeocean.com/), a cloud-based computational research platform. Code Ocean provides a reproducible research environment that's perfect for running these experiments.
+
+### Setting Up on Code Ocean
+
+1. **Create a New Capsule**:
+   - Go to [Code Ocean](https://codeocean.com/) and create a new capsule
+   - Choose "Create New"
+   - Copy from public git url https://github.com/lumentut/tsk_centroid.git
+   - Enter the git url in the "Copy From Public git" dialog
+   - Click "Import"
+2. **Install Packages**:
+   - Select starter environment: "Python and R (Jupyterlab/RStudio) (3.12.8, R 4.4.2, JupyterLab 4.3.5, RStudio 2024.12.1-563)"
+   - Find the experiment.yml, while hover on the file, click the vertical three dot
+   - Click "Install packages"
+   - Click "Save"
+
+### Running Experiments on Code Ocean
+
+**Using Jupyter Notebooks**
+
+- Click "Jupyter" notebook icon below button "Reproducible Run"
+- Open any experiment notebook (e.g., `notebookx/experiment_1_mamdani_tsk_selection.ipynb`)
+- Run cells sequentially as described in [EXPERIMENT_GUIDE.md](EXPERIMENT_GUIDE.md)
+
+**Using Terminal Commands**
+
+- Open the terminal in Code Ocean by clicking "Terminal" icon below "Reproducible Run" button
+- Navigate to project root: `cd /code`
+- Run experiments using bin commands:
+  ```bash
+  $ ./bin/mamdani_tsk_selection
+  $ ./bin/it2tsk_mbk_exploration
+  $ ./bin/it2tsk_hyperparameter_tuning
+  ```
+
+### Code Ocean Specific Notes
+
 ## Important Notes
 
 - **Never commit the `venv/` folder to Git** - it's already excluded in `.gitignore`
