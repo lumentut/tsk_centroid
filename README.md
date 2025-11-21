@@ -1,5 +1,7 @@
 # tsk_centroid
 
+[![DOI](https://zenodo.org/badge/1081902220.svg)](https://doi.org/10.5281/zenodo.17670090)
+
 A Centroid-Based TSK Fuzzy Logic System
 This project uses Python virtual environments to manage dependencies and ensure consistent development environments across different machines.
 
