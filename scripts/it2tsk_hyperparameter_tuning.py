@@ -76,8 +76,6 @@ target_column = "TVC"
 clustering_method = ClusteringMethod.MBKMEANS
 
 statistics = []
-
-statistics = []
 generation_history = []
 best_fitness_history = []
 best_params_history = []
