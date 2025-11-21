@@ -211,3 +211,10 @@ If you encounter issues with the virtual environment setup:
 - [ ] Start developing!
 
 Remember to always activate your virtual environment before working on the project!
+
+## References
+
+[^1]: D. R. Wijaya, R. Sarno, and E. Zulaika, “Electronic nose dataset for beef quality monitoring in uncontrolled ambient conditions,” Data Brief, vol. 21, pp. 2414–2420, Dec. 2018, doi: 10.1016/J.DIB.2018.11.091.
+[^2]: D. Wu and J. M. Mendel, “Designing practical interval type-2 fuzzy logic systems made simple,” IEEE International Conference on Fuzzy Systems, pp. 800–807, Sep. 2014, doi: 10.1109/FUZZ-IEEE.2014.6891534.
+[^3]: J. M. Mendel, “Uncertain Rule-Based Fuzzy Systems,” Uncertain Rule-Based Fuzzy Systems, 2017, doi: 10.1007/978-3-319-51370-6.
+[^4]: A. A. Haghrah, S. Ghaemi, and M. A. Badamchizadeh, “PyIT2FLS: An open-source Python framework for flexible and scalable development of type 1 and interval type 2 fuzzy logic models,” SoftwareX, vol. 30, p. 102146, May 2025, doi: 10.1016/J.SOFTX.2025.102146.
